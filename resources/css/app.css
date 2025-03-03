@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container article h1{
+    margin-bottom: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.container article p{
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.form-post {
+    display: flex;
+    gap: .5rem 0rem;
+    flex-direction: column;
+    margin: 2rem auto 0 auto;
+    width: 50%;
+}
+
+.form-group{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    background-color: #808080; /* Fondo gris */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar en línea */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 4px 2px; /* Margen */
+    cursor: pointer; /* Cursor de mano */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.btn.edit:hover { 
+    background-color: #4CAF50; /* Verde */ 
+} 
+
+.btn.delete:hover { 
+    background-color: #f44336; 
+}
+
+.btn.edit:active { 
+    background-color: #265528; /* Verde */ 
+} 
+
+.btn.delete:active { 
+    background-color: #8a2f28; 
+}
+
+.btn:hover { 
+    background-color: #555555; /* Fondo gris oscuro */ 
+} 
+
+.btn:active { 
+    background-color: #333333; /* Fondo gris más oscuro */ 
+}
