@@ -1,66 +1,81 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Blog en Laravel 11 con Tailwind CSS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este proyecto es un blog (basico) desarrollado con **Laravel 11**, utilizando **Tailwind CSS** para el diseño y **MySQL** como sistema de base de datos.
 
-## About Laravel
+## Características
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Gestión de Usuarios**  
+  - Registro de usuarios  
+  - Inicio de sesión  
+  - Recuperación de contraseñas  
+  - Cambio de credenciales  
+  - Activación de cuenta vía correo electrónico  
+  Todas estas funcionalidades se implementaron con **Laravel Breeze**.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Funcionalidades del Blog**  
+  - Publicar temas  
+  - Comentar publicaciones de otros usuarios  
+  - Crear, editar y eliminar publicaciones (solo para usuarios registrados y con cuenta activa)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Protección y Políticas**  
+  - Rutas protegidas para usuarios no autenticados  
+  - Policies que evitan que un usuario edite publicaciones ajenas, ofreciendo solo opciones limitadas en esos casos
 
-## Learning Laravel
+- **Diseño Adaptable**  
+  El sitio se adapta al modo claro u oscuro según la configuración del navegador.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Requisitos
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- PHP (compatible con Laravel 11)
+- Composer
+- MySQL
+- Node.js y npm (para compilar assets, si fuera necesario)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalación y Configuración
 
-## Laravel Sponsors
+1. **Clonar el Repositorio:**
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   cd <NOMBRE_DEL_PROYECTO>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. **Instalar Dependencias:**
+   ```bash
+   composer install
+    npm install
+    npm run dev
 
-### Premium Partners
+3. **Configurar el Entorno:**
+    - Copia el archivo .env.example a .env:
+   ```bash
+   cp .env.example .env
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- **Base de datos:**
+    - Importa la base de datos desde la carpeta DB (se incluye el archivo SQL listo para importar).
+    - Configura el nombre de la base de datos, usuario y contraseña en el archivo .env.
 
-## Contributing
+- **SMTP:**
+    - Se uso [[Mailtrap](https://mailtrap.io/)] para el envío de correos. Configura los datos en el archivo .env:
+    ```bash
+    MAIL_MAILER=smtp
+    MAIL_HOST=smtp.mailtrap.io
+    MAIL_PORT=2525
+    MAIL_USERNAME=tu_usuario
+    MAIL_PASSWORD=tu_contraseña
+    MAIL_ENCRYPTION=null
+    MAIL_FROM_ADDRESS="tu_correo@example.com"
+    MAIL_FROM_NAME="${APP_NAME}"
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Generar la Clave de la Aplicación:**
+    ```bash
+    php artisan key:generate
 
-## Code of Conduct
+5. **Iniciar el Servidor de Desarrollo:**
+     ```bash
+     cd <RUTA_DEL_PROYECTO>
+     php artisan serve
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**LISTO !!!** El proyecto se ejecutará en http://localhost:8000
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
