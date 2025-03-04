@@ -43,9 +43,9 @@ Este proyecto es un blog (basico) desarrollado con **Laravel 11**, utilizando **
    composer install
     npm install
     npm run dev
-
+    
 3. **Configurar el Entorno:**
-    - Copia el archivo .env.example a .env:
+    Copia el archivo .env.example a .env:
    ```bash
    cp .env.example .env
 
@@ -54,7 +54,7 @@ Este proyecto es un blog (basico) desarrollado con **Laravel 11**, utilizando **
     - Configura el nombre de la base de datos, usuario y contraseña en el archivo .env.
 
 - **SMTP:**
-    - Se uso [[Mailtrap](https://mailtrap.io/)] para el envío de correos. Configura los datos en el archivo .env:
+    Se uso [[Mailtrap](https://mailtrap.io/)] para el envío de correos. Configura los datos en el archivo .env:
     ```bash
     MAIL_MAILER=smtp
     MAIL_HOST=smtp.mailtrap.io
